@@ -12,12 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="asiop" customModuleProvider="target">
-            <connections>
-                <outlet property="statusMenu" destination="71t-KQ-Yso" id="i6t-k7-vbz"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
-            </connections>
-        </customObject>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="asiop" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -680,12 +675,18 @@
         </window>
         <menu id="71t-KQ-Yso">
             <items>
-                <menuItem title="Quit" keyEquivalent="q" id="a9W-jp-AAP">
+                <menuItem title="Quit SIO Peripherals" id="a9W-jp-AAP">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="Voe-Tx-rLC" id="uQS-fb-C1C"/>
+                        <action selector="quitClicked:" target="uJm-l1-ujH" id="XbE-ip-z51"/>
                     </connections>
                 </menuItem>
             </items>
         </menu>
+        <customObject id="uJm-l1-ujH" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="asiop" customModuleProvider="target">
+            <connections>
+                <outlet property="statusMenu" destination="71t-KQ-Yso" id="ZPC-iM-AUq"/>
+            </connections>
+        </customObject>
     </objects>
 </document>
