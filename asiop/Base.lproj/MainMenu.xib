@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
@@ -663,18 +663,15 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="A SIO Peripherals" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </view>
-        </window>
         <menu id="71t-KQ-Yso">
             <items>
+                <menuItem title="Preferences" id="hch-dt-rsH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClicked:" target="uJm-l1-ujH" id="1Xy-Bv-kT0"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="tyB-DS-2Xi"/>
                 <menuItem title="Quit SIO Peripherals" id="a9W-jp-AAP">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -682,11 +679,24 @@
                     </connections>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="338.5" y="361.5"/>
         </menu>
         <customObject id="uJm-l1-ujH" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="asiop" customModuleProvider="target">
             <connections>
                 <outlet property="statusMenu" destination="71t-KQ-Yso" id="ZPC-iM-AUq"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="cTc-xP-Wpx"/>
             </connections>
         </customObject>
+        <window title="A SIO Peripherals" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ" userLabel="Button">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <point key="canvasLocation" x="138" y="670"/>
+        </window>
     </objects>
 </document>

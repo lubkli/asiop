@@ -10,7 +10,8 @@ import Cocoa
 
 class StatusMenuController : NSObject {
     
-    //@IBOutlet weak var window: NSWindow!
+    let popover = NSPopover()
+    @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
@@ -21,6 +22,26 @@ class StatusMenuController : NSObject {
         statusItem.image = icon
         //statusItem.title = "ATARI SIO"
         statusItem.menu = statusMenu
+        
+        popover.contentViewController = PreferencesViewController(nibName: "PreferencesViewController", bundle: nil)
+    }
+    
+    func showPopover(sender: AnyObject?) {
+        if let button = statusItem.button {
+            popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+        }
+    }
+    
+    func closePopover(sender: AnyObject?) {
+        popover.performClose(sender)
+    }
+    
+    @IBAction func preferencesClicked(sender: AnyObject) {
+        if (popover.shown) {
+            closePopover(sender)
+        } else {
+            showPopover(sender)
+        }
     }
     
     @IBAction func quitClicked(sender: NSMenuItem) {
