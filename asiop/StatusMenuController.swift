@@ -11,6 +11,9 @@ import Cocoa
 class StatusMenuController : NSObject {
     
     let popover = NSPopover()
+    
+    var eventMonitor: EventMonitor?
+    
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
     
@@ -24,16 +27,27 @@ class StatusMenuController : NSObject {
         statusItem.menu = statusMenu
         
         popover.contentViewController = PreferencesViewController(nibName: "PreferencesViewController", bundle: nil)
+        
+        eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) { [unowned self] event in
+            if self.popover.shown {
+                self.closePopover(event)
+            }
+        }
+        eventMonitor?.start()
     }
     
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
         }
+        
+        eventMonitor?.start()
     }
     
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
+        
+        eventMonitor?.stop()
     }
     
     @IBAction func preferencesClicked(sender: AnyObject) {

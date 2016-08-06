@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57195D3E1D4FE94D0096838E /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57195D3C1D4FE94D0096838E /* PreferencesViewController.swift */; };
 		57195D3F1D4FE94D0096838E /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57195D3D1D4FE94D0096838E /* PreferencesViewController.xib */; };
+		57195D411D4FED880096838E /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57195D401D4FED880096838E /* EventMonitor.swift */; };
 		578680401D417FBA000F663B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786803F1D417FBA000F663B /* AppDelegate.swift */; };
 		578680421D417FBA000F663B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578680411D417FBA000F663B /* Assets.xcassets */; };
 		578680451D417FBA000F663B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578680431D417FBA000F663B /* MainMenu.xib */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		57195D3C1D4FE94D0096838E /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		57195D3D1D4FE94D0096838E /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
+		57195D401D4FED880096838E /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		5786803C1D417FBA000F663B /* asiop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = asiop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5786803F1D417FBA000F663B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		578680411D417FBA000F663B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				57195D3C1D4FE94D0096838E /* PreferencesViewController.swift */,
 				57195D3D1D4FE94D0096838E /* PreferencesViewController.xib */,
+				57195D401D4FED880096838E /* EventMonitor.swift */,
 				5786803F1D417FBA000F663B /* AppDelegate.swift */,
 				578680411D417FBA000F663B /* Assets.xcassets */,
 				578680431D417FBA000F663B /* MainMenu.xib */,
@@ -141,6 +144,7 @@
 				5786804D1D418A2B000F663B /* StatusMenuController.swift in Sources */,
 				578680401D417FBA000F663B /* AppDelegate.swift in Sources */,
 				57195D3E1D4FE94D0096838E /* PreferencesViewController.swift in Sources */,
+				57195D411D4FED880096838E /* EventMonitor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
