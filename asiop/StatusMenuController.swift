@@ -10,14 +10,16 @@ import Cocoa
 
 class StatusMenuController : NSObject {
     
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+    
     let popover = NSPopover()
     
     var eventMonitor: EventMonitor?
     
+    var preferencesWindowController: PreferencesWindowController?
+    
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
-    
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     
     override func awakeFromNib() {
         let icon = NSImage(named: "statusIcon")
@@ -26,7 +28,8 @@ class StatusMenuController : NSObject {
         //statusItem.title = "ATARI SIO"
         statusItem.menu = statusMenu
         
-        popover.contentViewController = PreferencesViewController(nibName: "PreferencesViewController", bundle: nil)
+        popover.contentViewController = PeripheralsViewController(nibName: "PeripheralsViewController", bundle: nil)
+        popover.appearance = NSAppearance.init(named: NSAppearanceNameAqua)
         
         eventMonitor = EventMonitor(mask: [.LeftMouseDownMask, .RightMouseDownMask]) { [unowned self] event in
             if self.popover.shown {
@@ -50,7 +53,7 @@ class StatusMenuController : NSObject {
         eventMonitor?.stop()
     }
     
-    @IBAction func preferencesClicked(sender: AnyObject) {
+    @IBAction func peripheralsClicked(sender: AnyObject) {
         if (popover.shown) {
             closePopover(sender)
         } else {
@@ -58,6 +61,32 @@ class StatusMenuController : NSObject {
         }
     }
     
+    @IBAction func preferencesClicked(sender: AnyObject) {
+        if (preferencesWindowController == nil) {
+            preferencesWindowController = PreferencesWindowController(windowNibName: "PreferencesWindowController")
+        }
+        
+        preferencesWindowController?.showWindow(self)
+        preferencesWindowController?.window?.makeKeyAndOrderFront(nil)
+        
+        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+    }
+    
+    @IBAction func aboutClicked(sender: AnyObject) {
+        let alert = NSAlert()
+        alert.messageText = "About SIO Peripherals"
+        alert.informativeText = "SIO Peripherals emulator for 8-bit ATARI Computers.\n\nFor proper operation is necessary attached SIO2PC interface.\n\nProject home is at https://github.com/lubkli/asiop"
+        alert.addButtonWithTitle("OK")
+        alert.runModal()
+        /* let result = alert.runModal()
+         switch(result) {
+         case NSAlertFirstButtonReturn:
+         ...
+         default:
+         break
+         } */
+    }
+
     @IBAction func quitClicked(sender: NSMenuItem) {
         NSApplication.sharedApplication().terminate(self)
     }

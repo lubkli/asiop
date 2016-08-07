@@ -665,10 +665,27 @@
         </menu>
         <menu id="71t-KQ-Yso">
             <items>
-                <menuItem title="Preferences" id="hch-dt-rsH">
+                <menuItem title="On-Line" state="on" id="iK0-Ll-jnw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="wxp-aJ-8jR"/>
+                <menuItem title="Peripherals" id="jy3-2V-732">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="peripheralsClicked:" target="uJm-l1-ujH" id="8zf-Pj-SNQ"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="28p-5O-7iB"/>
+                <menuItem title="Preferences..." id="hch-dt-rsH">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="preferencesClicked:" target="uJm-l1-ujH" id="1Xy-Bv-kT0"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="About SIO Peripherals" id="I5p-2P-Raa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutClicked:" target="uJm-l1-ujH" id="9Bj-D3-QZv"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="tyB-DS-2Xi"/>

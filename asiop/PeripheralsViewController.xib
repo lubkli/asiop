@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PeripheralsViewController" customModule="asiop" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <tabView fixedFrame="YES" drawsBackground="NO" initialItem="aLA-sN-GPf" translatesAutoresizingMaskIntoConstraints="NO" id="RIM-Jb-XgR">
+                    <rect key="frame" x="13" y="10" width="454" height="248"/>
+                    <font key="font" metaFont="system"/>
+                    <tabViewItems>
+                        <tabViewItem label="Disk Drive" identifier="1" id="aLA-sN-GPf">
+                            <view key="view" ambiguous="YES" id="9U1-Mz-O30">
+                                <rect key="frame" x="10" y="33" width="434" height="202"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gds-L1-Zv4">
+                                        <rect key="frame" x="17" y="167" width="32" height="32"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="floppy" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="dbG-KT-Yop">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpK-ms-0WT">
+                                        <rect key="frame" x="57" y="-3" width="380" height="202"/>
+                                        <clipView key="contentView" ambiguous="YES" id="qRy-ca-FxF">
+                                            <rect key="frame" x="1" y="1" width="378" height="200"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <collectionView ambiguous="YES" id="doh-ni-A6K">
+                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="200"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </collectionView>
+                                            </subviews>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Sny-0n-2CU">
+                                            <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="3qg-I4-IFa">
+                                            <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
+                            </view>
+                        </tabViewItem>
+                        <tabViewItem label="Tape Drive" identifier="2" id="PHb-QH-1BY">
+                            <view key="view" id="5Ws-0T-yrW">
+                                <rect key="frame" x="10" y="33" width="434" height="202"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p42-FM-ecM">
+                                        <rect key="frame" x="17" y="167" width="32" height="32"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="tape" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="RIT-cO-yUj">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </tabViewItem>
+                        <tabViewItem label="Printer" identifier="" id="OsT-yv-MbV">
+                            <view key="view" id="JJJ-bb-xtR">
+                                <rect key="frame" x="10" y="33" width="434" height="202"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfs-IO-tEo">
+                                        <rect key="frame" x="17" y="167" width="32" height="32"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="printer" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="A1p-7C-O03">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </tabViewItem>
+                        <tabViewItem label="Modem" identifier="" id="Crj-22-zr8">
+                            <view key="view" id="IL2-In-Va2">
+                                <rect key="frame" x="10" y="33" width="434" height="202"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9A-kH-xOW">
+                                        <rect key="frame" x="17" y="167" width="32" height="32"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="modem" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="DXP-VI-9Ze">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                            </view>
+                        </tabViewItem>
+                    </tabViewItems>
+                </tabView>
+            </subviews>
+        </customView>
+    </objects>
+    <resources>
+        <image name="floppy" width="15.359999656677246" height="15.359999656677246"/>
+        <image name="modem" width="15.359999656677246" height="15.359999656677246"/>
+        <image name="printer" width="15.359999656677246" height="15.359999656677246"/>
+        <image name="tape" width="15.359999656677246" height="15.359999656677246"/>
+    </resources>
+</document>
